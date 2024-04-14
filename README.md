@@ -1,28 +1,30 @@
-# Practica4
+# Practica5
 
-## Material Practica 4 
+## Material Practica 5 
 
-Modelos de probabilidad
+Distribuciones de Muestreo: 
 
-- PDFs: [diapos](https://github.com/alejandro-isglobal/alejandro-isglobal.github.io/blob/master/slides/Practica5.pdf)
+[diapos](https://github.com/alejandro-isglobal/alejandro-isglobal.github.io/blob/master/slides/Practica6.pdf), [capture.txt](https://github.com/alejandro-isglobal/alejandro-isglobal.github.io/blob/master/data/capture.txt) 
 
-- Videos: [Video 1](https://youtu.be/WMRgZEuSSBU), [Video 2](https://youtu.be/MG0W5-Sw48U), [Video 3](https://youtu.be/awQ34qKnZSw)
+- PDFs (antigua Práctica 6): [diapos](https://github.com/alejandro-isglobal/alejandro-isglobal.github.io/blob/master/slides/Practica6.pdf)
+
+- datos: [capture.txt](https://github.com/alejandro-isglobal/alejandro-isglobal.github.io/blob/master/data/capture.txt) 
+
+- Videos: [Video 1](https://youtu.be/Ia1WOXowoYY) , [Video 2](https://youtu.be/igqlRlxjVrs), [Video 3](https://youtu.be/Iwj4eg1uZhs)
+
 
 ## Trabajo en clase
 
 comandos:
 
-- <code>dbinom()</code>
-- <code>pbinom()</code>
-- <code>pnbinom()</code>
-- <code>dnbinom()</code>
-- <code>dpois()</code>
-- <code>ppois()</code>
-- <code>dexp()</code>
-- <code>pexp()</code>
+
+- <code>sample()</code>
+- <code>curve()</code>
 - <code>dnorm()</code>
 - <code>pnorm()</code>
 - <code>qnorm()</code>
+- <code>rnorm()</code>
+- <code>dchisq()</code>
 
 
 
@@ -31,80 +33,118 @@ comandos:
 
 # Ejercicio 1
 
-Durante la segunda guerra mundial, 535 bombas fueron lanzadas sobre el sur de Londres. Esta área ha sido dividida en una cuadrícula de 576 pequeños cuadrados de 0,25 metros cuadrados cada uno. Asumiendo que el objetivo es aleatorio: cada bomba impacta en un solo lugar a la vez, cada lugar tiene la misma probabilidad de ser impactada y, los impactos son sucesos independientes.
+Consideramos la variable aleatoria $X$
+que tiene la siguiente función de densidad:
 
-Si queremos analizar el número de bombas que impactan en un cuadrado en particular. 
-- ¿Qué modelo de distribución sigue dicha variable? 
+$$f(x)= 
+\begin{cases}
+\frac{4}{\pi(1+x^2)}, &0 <x  < 1 \\
+0,& resto \\
+\end{cases}
+$$
 
-- Realiza la gráfica de su función de densidad
-
-- Realiza la gráfica de su función de distribución
-- ¿Cuál es la probabilidad de que exactamente 2 bombas impacten en una zona en particular?
-- ¿Cuál es la probabilidad de que una zona concreta sea bombardeada (al menos caiga una bomba)?
-- Si queremos analizar el número de zonas que reciben exactamente 2 impactos.
-- ¿Qué modelo de distribución sigue dicha variable? 
-
-- Realiza la gráfica de su función de densidad (Manipula los límites de los ejes hasta encontrar una gráfica apreciable)
-- Realiza la gráfica de su función de distribución
-- ¿Cuál es la probabilidad de que menos de 100 zonas reciban exactamente 2 impactos?
-- ¿Cuántas zonas se espera que sufran exactamente dos impactos?
-
-- Si queremos analizar el número de zonas que deben ser inspeccionadas para encontrar 10 que hayan sido bombardeadas.
-- ¿Qué modelo de distribución sigue dicha variable? 
-- Realiza la gráfica de su función de densidad (Manipula los límites de los ejes hasta encontrar una gráfica apreciable)
-- Realiza la gráfica de su función de distribución
-- ¿Cuál es la probabilidad de que se deban inspeccionar al menos 20 zonas para encontrar 10 que hayan sido bombardeadas?
-- ¿Cuántas zonas han de ser inspeccionadas para encontrar 10 que hayan sido bombardeadas?
+- Su valor esperado ($\mu$) es 0.4412712 y su varianza ($\sigma^2$)
+) es 0.07851927. Representa gráficamente dicha función de densidad.
 
 
+- Simula 50 muestras de tamaño n
+ igual a 4 (utiliza la semilla 321).
+
+- Calcula la suma de las observaciones de cada muestra
+
+- ¿Cuál es el valor de la media de la suma muestral?
+
+- ¿Qué relación tiene (aproximada) con la media de la población?
+  - son iguales
+  - es $n$ veces mayor
+  - es $n$ veces menor
+  - es $\sqrt{n}$ veces mayor
+  - es $\sqrt{n}$ veces menor
+  
+- ¿La distribución de la suma muestral es exactamente a una $N(n\mu,n\sigma^2)$
+?
+  - Sí
+  - No
+  
+- Calcula la media de cada muestra
+
+- ¿Cuál es el valor de la media de la media muestral?
+
+- ¿Qué relación tiene (aproximada) con la media de la población?
+  - son iguales
+  - es $n$ veces mayor
+  - es $n$ veces menor
+  - es $\sqrt{n}$ veces mayor
+  - es $\sqrt{n}$ veces menor
+
+- ¿Cuál es el valor de la varianza de la media muestral?
+- ¿Qué relación tiene con la varianza de la población?
+  - son iguales
+  - es $n$ veces mayor
+  - es $n$ veces menor
+  - es $\sqrt{n}$ veces mayor
+  - es $\sqrt{n}$ veces menor
+
+- ¿La distribución de la suma muestral es exactamente a una $N\mu,\sigma^2/n)$
+  - Sí
+  - No
+  
+- Calcula la varianza de de cada muestra
+- ¿Cuál es el valor de la media de la varianza muestral?
+
+- ¿Qué relación tiene (aproximada) con la varianza de la población?
+?
+  - son iguales
+  - es $n$ veces mayor
+  - es $n$ veces menor
+  - es $\sqrt{n}$ veces mayor
+  - es $\sqrt{n}$ veces menor
+  
+- ¿La distribución de la varianza muestral es exactamente una $\chi^2_{n-1}$
+?  
+  - Sí
+  - No
+  
+- Si el tamaño de la muestra es 50, ¿Cuál de las siguientes afirmaciones es incorrecta?
+  - $\mu_\bar{x}=\mu_x$:  La media de la media muestral es igual a la media de población
+  - $X\rightarrow N(\mu,\sigma^2/n)$ La distribucion de la suma es una normal
+  - $T\rightarrow N(\mu μ,n σ^2/n)$
+  - $(n−1)\frac{S^2}{\sigma^2} \rightarrow \chi^2_{n−1}$
+
+- Calcula la probabilidad de que:
+  - La suma de la muestra esté entre 17 y 24
+  - La media de la muestra esté entre 0.39 y 0.41
+  - La varianza de la muestra esté entre 0.05 y 0.15
+  
 # Ejercicio 2
-Las ventas diarias de un supermercado siguen una distribución normal, con media 9000 euros y desviación estándar 2000 euros.
 
-- Realiza la gráfica de la función de densidad de las ventas diarias.
-- Realiza la gráfica de la función de distribución de las ventas diarias.
-- Calcula la probabilidad de que un día las ventas sean mas pequeñas que 10000 euros. Representa dicha probabilidad en la gráfica de la función de distribución.
-- Calcula la probabilidad de que un día las ventas sean mayores de 12000 euros. Representa dicha probabilidad en la gráfica de la función de densidad.
-- Calcula la probabilidad de que un día las ventas se encuentren entre 7500 y 10000 euros. Representa dicha probabilidad en la gráfica de la función de densidad.  
-- Calcula la probabilidad de que un día las ventas sean exactamente de 7000 euros.
-- El 90% de los días, las ventas superan un valor, ¿Cuál es ese valor?
-- El 30% de los días, las ventas no superan un valor, ¿Cuál es ese valor?
-- Realiza 10000 simulaciones de las ventas diarias. (Utiliza como semilla el número 123)
-- Representa gráficamente la frecuencia de los resultados obtenidos y compáralo con el diagrama de la función de densidad.
-- ¿Cuál es el valor de la media de los resultados de las simulaciones?
-- ¿Cuál es la mediana de los resultados de las simulaciones?
-- ¿Cuál es la desviación típica de los resultados de las simulaciones?
-- Compara los últimos valores calculados (estadísticos) con los parámetros de la función de distribución.
+Los pesos de los hombres adultos de una determinada población se distribuyen normalmente, con una media de 80 kg y una desviación estándar de 15 kg.
+
+- Calcula la probabilidad de que:
+  - La suma del peso de 9 hombres esté entre 700 y 800kg.
+  - La media del peso de 9 hombres esté entre 78 y 80kg
+  - La varianza del peso de 9 hombres esté entre 200 y 250
+  - Simula 100 muestras de tamaño $n$ igual a 9 (utiliza la semila 321)
+  - Haz el histograma de la suma muestral
+  
+¿La distribución de la suma muestral se puede aproximar a una $N(n\mu,n\sigma^2)$
+? Compare el histograma y la distribución aproximada.
 
 
-# Ejercicio 3
+- Haz el histograma de la media muestral
 
-Sea X
- la distancia en metros que recorre un animal desde el lugar donde nace hasta el primer territorio desocupado que encuentra. Según el artículo “Competition and dispersal from multiple nests” publicado en la revista científica Ecology, para las ratas canguro, la distancia X
- se puede modelar mediante una variable aleatoria con distribución exponencial con parámetro 0.01005
-
-- Realiza la gráfica de la función de densidad de X
-- Realiza la gráfica de la función de distribución de X
-- Calcula la probabilidad de que un animal recorra menos de 100 metros hasta encontrar el primer territorio desocupado. Representa dicha probabilidad en la gráfica de la función de distribución.
-- Calcula la probabilidad de que un animal recorra más de 80 pero menos de 110 metros hasta encontrar el primer territorio desocupado. Representa dicha probabilidad en la gráfica de la función de densidad.
-- ¿Cuál es el valor de la distancia mediana que recorre un animal desde el lugar donde nace hasta el primer territorio desocupado que encuentra?
-- Realiza 10000 simulaciones de la distancia que recorre un animal. (Utiliza como semilla el número 123)
-- Representa gráficamente la frecuencia de los resultados obtenidos y compáralo con el diagrama de la función de probabilidad.
-- ¿Cuál es el valor de la media de los resultados de las simulaciones?
-- ¿Cuál es la mediana de los resultados de las simulaciones?
-- ¿Cuál es la desviación típica de los resultados de las simulaciones?
-- Compara los últimos valores calculados (estadísticos) con los parámetros de la función de distribución.
+¿La distribución de la media muestral se puede aproximar a una $N(\mu,\sigma^2/n)$
+? Compare el histograma y la distribución aproximada.
 
 
+- Haz el histograma de la varianza muestral
+
+¿La distribución de la varianza muestral se puede aproximar a una $\chi^2_{n−1}$
+? Compare el histograma y la distribución aproximada.
 
 
+- Haz el histograma del estadístico $(n−1)\frac{S^2}{\sigma^2}$
 
-
-
-
-
-
-
-
-
-
-
+- ¿La distribución del estadístico $(n−1)\frac{S^2}{\sigma^2}$
+ se puede aproximar a una $\chi^2_{n−1}$
+? Compare el histograma y la distribución aproximada.
